@@ -1,0 +1,72 @@
+/* --- Animations & Effects --- */
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover; /* ensures the image covers the circle nicely */
+  border: 4px solid #38bdf8; /* optional stylish border */
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth card hover */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Button hover glow */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.3);
+  transition: left 0.5s;
+}
+.btn:hover::after {
+  left: 100%;
+}
+
+.new-btn {
+  background: #facc15; /* bright yellow */
+  color: black;
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-weight: bold;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.new-btn:hover {
+  background: #eab308;
+  transform: scale(1.1);
+}
+
+footer {
+  padding: 30px;
+  background: #1e293b;
+  text-align: center;  /* centers text horizontally */
+  display: flex;
+  justify-content: center; /* centers horizontally for any inner content */
+  align-items: center;     /* centers vertically if needed */
+  flex-direction: column;  /* keeps multiple lines stacked vertically */
+}
+
